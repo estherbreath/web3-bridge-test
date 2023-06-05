@@ -19,11 +19,11 @@ const elements = [
   { element: password, err: password_err },
 ];
 
-for(let i = 0; i < elements.length; i++){
-    const content = elements[i]
-    content.element.addEventListener(('input'), () => {
-        content.err.innerHTML = ""
-    })
+for (let i = 0; i < elements.length; i++) {
+  const content = elements[i];
+  content.element.addEventListener("input", () => {
+    content.err.innerHTML = "";
+  });
 }
 
 form.addEventListener("submit", (e) => {
@@ -68,9 +68,11 @@ function validateString(element, errElement, fieldname) {
 function validateEmail(element, errElement, fieldname) {
   const validRegex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
-  if (!element.value.match(validRegex)) {
+  if (element.value === "") {
     errElement.innerHTML = `${fieldname} is required`;
+    return false;
+  } else if (!element.value.match(validRegex)) {
+    errElement.innerHTML = `${fieldname} provided is invalid`;
     return false;
   } else {
     return true;
