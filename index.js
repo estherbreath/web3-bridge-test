@@ -30,6 +30,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   if (validateForm()) {
     alert("Form validated successfully. welldone!!!!!");
+    form.reset()
   }
 });
 
