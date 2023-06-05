@@ -26,7 +26,8 @@ function validateForm() {
   );
   const lastnameValidate = validateString(lastname, lastname_err, "Lastname");
   const countryValidate = validateString(country, country_err, "Location");
-  if (firstnameValidate && lastnameValidate && countryValidate) {
+  const emailValidate = validateEmail(email, email_err, 'Email')
+  if (firstnameValidate && lastnameValidate && countryValidate && emailValidate) {
     return true;
   } else {
     return false;
@@ -40,4 +41,16 @@ function validateString(element, errElement, fieldname) {
     errElement.innerHTML = `${fieldname} is required`;
     return false;
   }
+}
+
+function validateEmail(element, errElement, fieldname) {
+  const validRegex =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    if(!element.value.match(validRegex)){
+        errElement.innerHTML = `${fieldname} is required`
+        return false
+    }else {
+        return true
+    }
 }
