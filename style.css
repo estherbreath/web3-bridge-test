@@ -16,6 +16,19 @@ main{
     padding: 2rem;
     border: 1px solid black;
     border-radius: 1rem;
+    margin-top: 3em;
+}
+
+.header_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.header_container h2{
+    font-size: 2rem;
+    text-align: center;
 }
 
 .input_container{
@@ -63,5 +76,10 @@ small{
         width: 100%;
         margin: 1rem;
         padding: 1.5rem;
+    }
+
+    .header_container h2{
+        font-size: 1.2rem;
+        text-align: center;
     }
   }
