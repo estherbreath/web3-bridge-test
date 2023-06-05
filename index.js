@@ -30,7 +30,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   if (validateForm()) {
     alert("Form validated successfully. welldone!!!!!");
-    form.reset()
+    resetForm();
   }
 });
 
@@ -90,4 +90,11 @@ function validatePassword(element, errElement, fieldname) {
   } else {
     return true;
   }
+}
+function resetForm() {
+  firstname.value = "";
+  lastname.value = "";
+  country.value = "";
+  email.value = "";
+  password.value = "";
 }
